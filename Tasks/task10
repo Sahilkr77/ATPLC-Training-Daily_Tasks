@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>form</title>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="student name " placeholder="enter your name"><br><br>
+        <input type="number" name="contact no" placeholder="enter mobile no.">
+        <br><br>
+        email:-<input type="text" name="email" placeholder="enter your email"><br><br>
+        gander:-<input type="radio" name="n">male
+        <input type="radio" name="n">female <br><br>
+        education done:-<input type="checkbox" name="n">yes <br><br>
+        Do you like tea:-<input type="radio" name="n1">yes
+        <input type="radio" name="n1">no <br><br>
+        <input type="submit">
+        <input type="reset">
+
+    </form>
+
+</body>
+
+</html>
