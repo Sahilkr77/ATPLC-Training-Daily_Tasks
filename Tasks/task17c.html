@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exception handling </title>
+    <style>
+        body {
+            background-color: aqua;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        exception handling
+    </h1>
+    <script>
+        // 
+        try {
+            document.write(sahil);
+        }
+        catch (error) {
+            if (error instanceof ReferenceError) {
+                document.write("this variable is not declare ")
+            }
+            else {
+                throw error;
+            }
+        }
+        document.write('<br>')
+        document.write('<br>')
+        //
+
+        function division(r, s) {
+            if (b == 0) {
+                throw new Error('division by zero');
+            }
+            return s / r;
+        }
+        try {
+            var reslt = division(4, 0)
+            document.write('final result is eqal to = ', reslt);
+
+        }
+        catch (error) {
+            document.write('error= ', error.messege);
+
+        }
+
+        document.write('<br>')
+        document.write('<br>')
+        //
+
+        try {
+            let arr = [3, 4, 1, 8, 9, 0]
+            let index = 10;
+            if (index < 0 || index >= arr.length) {
+                throw new Error('index out of bounds')
+            }
+            else {
+                document.print(arr[index])
+            }
+        }
+        catch (error) {
+            document.write('error=  ', error.messege)
+        }
+
+
+        document.write('<br>')
+        document.write('<br>')
+
+
+        try {
+            // Code that may throw an exception
+            // ...
+            throw new Error("An error occurred.");
+        } catch (error) {
+            // Catch and handle the exception
+            document.write("Caught an exception:", error.message);
+
+            document.write('<br>')
+            document.write('<br>')
+        } finally {
+            // Code that will always run regardless of whether an exception was thrown or caught
+            document.write("Finally block executed.");
+        }
+
+
+    </script>
+
+</body>
+
+</html>

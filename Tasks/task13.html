@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of javacript</title>
+    <style>
+        body {
+            background-color: aquamarine;
+
+        }
+    </style>
+
+</head>
+<h1>
+    this is basics of javacript
+</h1>
+<!-- Q1 print your name and address -->
+
+<body>
+    <script>
+        let name = "Sahil kumar";
+        let address = "city-Muzaffarpur,pincode-6787 ,policestation- muzaffarpur , postoffice-muzaffarpur";
+        document.write('name= ', name, '<br>');
+
+        document.write('address= ', address, '<br>');
+
+        document.write('<br>')
+        document.write('<br>')
+        document.write('<br>')
+        // Q2-program to check wheather value and data
+
+        const num1 = 78;
+        const num2 = 'a';
+        document.write("num1='78' and num2='a'")
+        if (num1 == num2) {
+            document.write('<br>')
+            document.write('datatype and value of  num1 is equal to num2')
+        }
+        else {
+            document.write('<br>')
+            document.write("nvalue and datatype of num1 is not equal to num2")
+        }
+
+
+        document.write('<br>')
+        document.write('<br>')
+        document.write('<br>')
+
+
+        // 
+
+        let s1 = prompt("enter first string")
+        let s2 = prompt("enter second string")
+        document.write('s1=' + s1, '<br>', 's2= ' + s2)
+        const adds1s2 = (s1 + s2).toUpperCase()
+        document.write('final string= ', adds1s2)
+
+
+        document.write('<br>')
+        document.write('<br>')
+        document.write('<br>')
+
+        // 
+
+        const s = prompt("enter a string")
+        document.write("string =", s)
+        document.write('<br>')
+        document.write("string lenght to byte= ", (s.length) * 2)
+
+
+        document.write('<br>')
+        document.write('<br>')
+        document.write('<br>')
+
+        //
+        const num = parseFloat(prompt("enter a float number"))
+        const rounded = parseInt(prompt("enter number of digits you want  to roundoff"))
+        document.write('num= ', num, '<br>', 'digt you want to round', rounded, '<br>')
+        const afterroundnum = num.toFixed(rounded)
+        document.write('after rounding number = ', afterroundnum)
+    </script>
+
+</body>
+
+</html>

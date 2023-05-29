@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops</title>
+    <style>
+        body {
+            background-color: rgb(96, 155, 54);
+        }
+    </style>
+</head>
+<h1>
+    conditional ,loops ,functions
+</h1>
+
+<body>
+    <!--  -->
+    <script>
+        let numbers = [8, -9, -7, 99, 709, 65, 34, -77, -88, -1];
+        document.write('numbers = ', numbers)
+        const filterednun = numbers.filter(num => num >= 0)
+        document.write('<br>filterd number = ', filterednun)
+
+
+        document.write('<br>')
+        document.write('<br>')
+        document.write('<br>')
+        //
+        const no = parseInt(prompt('enter a number'))
+        function Sahil(no) {
+            if (no > 13) {
+                return 2 * Math.abs(13 - no)
+            }
+            else
+
+                return 13 - no
+
+        }
+        document.write('number= ', no, '<br>', "final num = ", Sahil(no))
+
+        document.write('<br>')
+        document.write('<br>')
+        document.write('<br>')
+        // 
+        function fib() {
+            let f = 0;
+            let s = 1;
+            document.write(f, ', ', s, ' ,')
+
+            for (let i = 0; i < 10; i++) {
+                let sumation = f + s;
+                document.write(sumation, ', ')
+                f = s;
+                s = sumation;
+            }
+        }
+        document.write('fib series=  ');
+        fib();
+
+        document.write('<br>')
+        document.write('<br>')
+        document.write('<br>')
+
+        //
+
+        function multi() {
+            let summ = 0;
+            for (let i = 0; i < 1000; i++) {
+                if (i % 3 == 0 || i % 5 == 0) {
+                    document.write(i, '+')
+                    summ += i;
+
+                }
+
+            }
+            document.write(' <br>sum= ', summ)
+
+        }
+        document.write('<br><br>')
+        document.write('<br>')
+
+        multi();
+
+
+        document.write('<br><br>')
+        document.write('<br>')
+        //
+        const n = parseInt(prompt('enter a number'))
+        document.write('cube of given number is = ', Math.pow(n, 3))
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

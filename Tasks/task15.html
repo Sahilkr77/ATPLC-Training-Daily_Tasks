@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <style>
+        body {
+            background-color: rgb(213, 131, 23);
+        }
+    </style>
+</head>
+<h1>
+    Arrays
+</h1>
+
+<body>
+    <script>
+        //
+
+        let numbers = [4, 55, 66, 12, 34, 67, 89, 90, 68, 23]
+        document.write('array= ', numbers)
+        let arraysort = numbers.sort((g, h) => g - h);
+        document.write('<br>sorted array = ', arraysort)
+
+        document.write('<br>')
+        document.write('<br>')
+        document.write('<br>')
+
+        //
+        let array1 = [8, 9, 6, 4, 0];
+        let arr2 = [8, 4, 90, 55, 83]
+        let conarr = [...array1, arr2];
+        document.write('array 1= ', array1, '<br>array2 = ', arr2)
+        document.write('<br>conarray= ', conarr)
+
+        document.write('<br>')
+        document.write('<br>')
+        document.write('<br>')
+
+        //
+        const realarr = [8, 9, 4, 5, 0, 44]
+        const newarr = realarr.filter((_, index) => {
+            return index > 0;
+
+
+        })
+        document.write('realarray= ', realarr, '<br>')
+
+        document.write('after deleted the first element of the array =', newarr)
+
+
+
+    </script>
+
+</body>
+
+</html>

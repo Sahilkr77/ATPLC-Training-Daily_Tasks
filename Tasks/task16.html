@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM & Events</title>
+    <style>
+        body {
+
+            color: black;
+        }
+
+        .date {
+            background: #9e80aa;
+            text-align: center;
+            padding: 8px;
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 10px;
+            background: cyan;
+            padding: 5px;
+            border-radius: 15px;
+        }
+
+        .container p {
+            font-size: 25px;
+        }
+
+        .container img {
+            width: 200px;
+            align-self: center;
+        }
+
+        .output {
+            padding: 0;
+            border-radius: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+            background: #7b3538;
+            margin-bottom: 20px;
+        }
+
+        .output h1 {
+            text-align: center;
+            margin: 0;
+        }
+
+        .output div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input,
+        button {
+            padding: 7px;
+            background: black;
+            border: 1px solid white;
+            color: white;
+            border-radius: 10px;
+        }
+
+        button {
+            background: #260a98;
+            color: rgb(238, 170, 170);
+            font-weight: bold;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="date"></div>
+    <div class="output">
+        <h1>here you can print the final output </h1>
+        <div></div>
+    </div>
+    <div class="container">
+        <p>here you can change the size</p>
+        <button onclick="increaseFont()">zoomout</button>
+        <button onclick="decreaseFont()">zoomin</button>
+    </div>
+    <div class="container">
+        <input type="text" placeholder="enter name" id="name">
+        <input type="text" placeholder="enter address" id="address">
+        <button onclick="printname()">above container you can write your name and address and print </button>
+    </div>
+    <div class="container">
+        <input type="text" placeholder="enter branch" id="branch">
+        <button onclick="printbranch()">branch</button>
+    </div>
+    <div class="container">
+        <input type="text" placeholder="enter string 1" id="string-1">
+        <input type="text" placeholder="enter string 2" id="string-2">
+        <button onclick="addstring()">Add and change in capital letter</button>
+    </div>
+    <div class="container">
+        <input type="text" placeholder="enter a string" id="string-length">
+        <button onclick="getlength()">Get Length in Byte</button>
+    </div>
+    <div class="container">
+        <input type="text" placeholder="enter number" id="round-number">
+        <input type="text" placeholder="enter round off digit" id="round-digit">
+        <button onclick="roundup()">click and roundoff the numbers</button>
+    </div>
+    <div class="container">
+        <img src="https://picsum.photos/200" alt="changeable image">
+        <button onclick="changeImage()">change image</button>
+    </div>
+
+    <script>
+
+        const name = document.querySelector('#name');
+        const address = document.querySelector('#address');
+        const branch = document.querySelector('#branch');
+        const string1 = document.querySelector('#string-1');
+        const string2 = document.querySelector('#string-2');
+        const string = document.querySelector('#string-length');
+        const roundnumber = document.querySelector('#round-number');
+        const rounddigit = document.querySelector('#round-digit');
+        const text = document.querySelector('.container p');
+        const img = document.querySelector('.container img');
+
+        const output = document.querySelector('.output div');
+
+        function printname() {
+            output.innerHTML = `<br><span><b>Name = </b>${name.value}</span><span><b>Address = </b>${address.value}</span>`
+        }
+        function printbranch() {
+            output.innerHTML = `<br><span><b>branch = </b>${branch.value}</span>`
+        }
+        function addstring() {
+            output.innerHTML = `< br > <span><b>New Capitalize String = </b>${(string1.value + string2.value).toUpperCase()}</span>`
+        }
+        function getlength() {
+            output.innerHTML = `< br > <span><b>Length of String = </b>${(string.value.length) * 2} byte</span>`
+        }
+        function roundup() {
+            output.innerHTML = `< br > <span><b>Rounded Value = </b>${parseFloat(roundnumber.value).toFixed(parseInt(rounddigit.value))}</span>`
+        }
+
+        function changeImage() {
+            let id = Math.floor(Math.random() * 1000);
+
+            img.src = `https://picsum.photos/id/${id}/200`
+
+        }
+        function increaseFont() {
+            let currentsize = getComputedStyle(text)["fontSize"].split('px')[0];
+            currentsize++;
+            text.style.fontSize = currentsize + 'px';
+        }
+        function decreaseFont() {
+            let currentsize = getComputedStyle(text)["fontSize"].split('px')[0];
+            currentsize--;
+            text.style.fontSize = currentsize + 'px';
+
+        }
+        function showDate() {
+            const datediv = document.querySelector('.date');
+            let date = new Date().toLocaleString();
+            datediv.innerHTML = date;
+            setInterval(() => {
+                date = new Date().toLocaleString();
+                datediv.innerHTML = date;
+            }, 1000);
+        }
+        showDate();
+
+    </script>
+
+</body>
+
+</html>
